@@ -1,5 +1,5 @@
 FROM devopsedu/webapp
-ADD website /var/www/html
-RUN rm /var/www/html/index.html
-CMD apachectl -D FOREGROUND
+WORKDIR /var/www/html
+COPY ./website/index.php index.php
+EXPOSE 8081
 
